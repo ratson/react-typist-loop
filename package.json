@@ -1,0 +1,41 @@
+{
+  "name": "react-typist-loop",
+  "version": "0.0.0",
+  "description": "Typing animations with React.",
+  "main": "lib/TypistLoop.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel --source-maps --out-dir=lib/ src/",
+    "dev": "cross-env NODE_ENV=development babel --watch --source-maps --out-dir=lib/ src/",
+    "clean": "rimraf lib dist coverage",
+    "prepublish": "run-s clean build",
+    "lint": "eslint --ext js --ext md .",
+    "test": "npm run lint"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.3.2",
+    "babel-preset-env": "^1.2.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.23.0",
+    "cross-env": "^3.2.3",
+    "eslint": "^3.17.0",
+    "eslint-config-concise": "^0.6.1",
+    "eslint-config-concise-esnext": "^0.6.0",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1"
+  },
+  "repository": "ratson/react-typist-loop",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "*.md",
+    "LICENSE",
+    "lib",
+    "src"
+  ]
+}
