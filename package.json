@@ -11,6 +11,9 @@
     "lint": "eslint --ext js --ext md .",
     "test": "npm run lint"
   },
+  "peerDependencies": {
+    "react-typist": "*"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -25,6 +28,9 @@
     "eslint-config-concise": "^0.6.1",
     "eslint-config-concise-esnext": "^0.6.0",
     "npm-run-all": "^4.0.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-typist": "^1.0.3",
     "rimraf": "^2.6.1"
   },
   "repository": "ratson/react-typist-loop",
