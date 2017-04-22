@@ -1,4 +1,5 @@
-import React, {Children, Component, PropTypes, cloneElement} from 'react'
+import PropTypes from 'prop-types'
+import React, {Children, Component, cloneElement} from 'react'
 
 class TypistLoop extends Component {
   static propTypes = {
