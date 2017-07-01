@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production babel --source-maps --out-dir=lib/ src/",
     "dev": "cross-env NODE_ENV=development babel --watch --source-maps --out-dir=lib/ src/",
-    "clean": "rimraf lib dist coverage",
+    "clean": "del lib",
     "prepublish": "run-s clean build",
     "lint": "eslint --ext js --ext md .",
     "test": "npm run lint"
@@ -24,14 +24,14 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "cross-env": "^4.0.0",
+    "del-cli": "^1.1.0",
     "eslint": "^3.19.0",
     "eslint-config-concise": "^0.6.1",
     "eslint-config-concise-esnext": "^0.6.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-typist": "^1.1.0",
-    "rimraf": "^2.6.1"
+    "react-typist": "^1.1.0"
   },
   "repository": "ratson/react-typist-loop",
   "license": "MIT",
