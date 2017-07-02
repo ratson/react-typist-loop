@@ -32,9 +32,11 @@ class TypistLoop extends Component {
     const {children} = this.props
     return (
       <span>
-        {Children.map(children, (child, i) => (
-          i === currentIndex && cloneElement(child, {onTypingDone})
-        ))}
+        {Children.map(
+          children,
+          (child, i) =>
+            i === currentIndex && cloneElement(child, {onTypingDone}),
+        )}
       </span>
     )
   }

@@ -7,15 +7,17 @@
     "build": "cross-env NODE_ENV=production babel --source-maps --out-dir=lib/ src/",
     "dev": "cross-env NODE_ENV=development babel --watch --source-maps --out-dir=lib/ src/",
     "clean": "del lib",
-    "prepublish": "run-s clean build",
-    "lint": "eslint --ext js --ext md .",
-    "test": "npm run lint"
+    "prepublish": "run-s clean build test",
+    "lint": "eslint --ext js,md .",
+    "test": "ava",
+    "posttest": "npm run lint"
   },
   "peerDependencies": {
     "react-typist": "*"
   },
   "dependencies": {},
   "devDependencies": {
+    "ava": "^0.20.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.1",
@@ -25,12 +27,14 @@
     "babel-register": "^6.24.1",
     "cross-env": "^4.0.0",
     "del-cli": "^1.1.0",
+    "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
     "eslint-config-concise": "^0.6.1",
     "eslint-config-concise-esnext": "^0.6.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.6.1",
     "react-typist": "^1.1.0"
   },
   "repository": "ratson/react-typist-loop",
@@ -43,5 +47,11 @@
     "LICENSE",
     "lib",
     "src"
-  ]
+  ],
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
 }
