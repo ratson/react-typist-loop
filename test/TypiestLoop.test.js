@@ -1,12 +1,12 @@
 import React from 'react'
 import Typist from 'react-typist'
 
-import {shallow} from 'enzyme'
+import { shallow } from 'enzyme'
 import test from 'ava'
 
 import TypistLoop from '../src/TypistLoop'
 
-test((t) => {
+test(t => {
   const App = () =>
     <TypistLoop interval={3000}>
       {['Hello World', 'Good Morning', 'Bye'].map(text =>
