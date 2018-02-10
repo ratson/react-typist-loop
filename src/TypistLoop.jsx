@@ -21,14 +21,17 @@ class TypistLoop extends React.Component {
 
   componentWillUnmount() {
     this._isMounted = false
+    if (this._timer) {
+      clearTimeout(this._timer)
+    }
   }
 
   onTypingDone = () => {
-    setTimeout(this.showNext, this.props.interval)
+    this._timer = setTimeout(this.showNext, this.props.interval)
   }
 
   showNext = () => {
-    if (this._isMounted) {
+    if (!this._isMounted) {
       return
     }
     const { children } = this.props
