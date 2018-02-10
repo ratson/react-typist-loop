@@ -1,24 +1,28 @@
 import React from 'react'
 import Typist from 'react-typist'
 
-import { shallow } from 'enzyme'
+import { configure, shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import test from 'ava'
 
 import TypistLoop from '../src/TypistLoop'
 
+configure({ adapter: new Adapter() })
+
 test(t => {
-  const App = () =>
+  const App = () => (
     <TypistLoop interval={3000}>
-      {['Hello World', 'Good Morning', 'Bye'].map(text =>
+      {['Hello World', 'Good Morning', 'Bye'].map(text => (
         <Typist key={text} startDelay={1000}>
           {text}
-        </Typist>,
-      )}
+        </Typist>
+      ))}
     </TypistLoop>
+  )
 
   const app = shallow(<App />)
   t.is(
     app.html(),
-    '<span><div class="Typist "><span class="Cursor Cursor--blinking">|</span></div></span>',
+    '<div class="Typist "><span class="Cursor Cursor--blinking">|</span></div>',
   )
 })
