@@ -1,6 +1,6 @@
 {
   "name": "react-typist-loop",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Typing animations with React.",
   "main": "lib/TypistLoop.js",
   "scripts": {
