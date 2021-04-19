@@ -9,22 +9,18 @@ const TypistLoop: React.FC<TypistLoopProps> = (
 ) => {
   const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const [mounted, setMounted] = React.useState<boolean>(false);
-  const [timer, setTimer] = React.useState<React.SetStateAction<any>>();
+  const [timer, setTimer] = React.useState<number>();
 
   React.useEffect(() => {
     setMounted(true);
     return () => {
       setMounted(false);
-      if (timer) {
-        clearTimeout(timer);
-      }
+      if (timer) clearTimeout(timer);
     };
   }, []);
 
   const showNext = () => {
-    if (!mounted) {
-      return;
-    }
+    if (!mounted) return;
     setCurrentIndex((currentIndex + 1) % React.Children.count(children));
   };
 
