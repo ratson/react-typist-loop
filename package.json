@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production babel --source-maps --out-dir=lib/ src/",
     "dev": "cross-env NODE_ENV=development babel --watch --source-maps --out-dir=lib/ src/",
     "clean": "del lib",
-    "prepublish": "run-s clean build test",
+    "prepublishOnly": "run-s clean build test",
     "lint": "eslint --ext js,jsx,md .",
     "test": "jest",
     "posttest": "npm run lint"
