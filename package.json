@@ -48,11 +48,5 @@
     "LICENSE",
     "lib",
     "src"
-  ],
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
-  }
+  ]
 }
