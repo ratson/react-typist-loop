@@ -2,7 +2,6 @@ import * as React from "react";
 
 export interface TypistLoopProps {
   interval: number;
-  children: any;
 }
 
 const TypistLoop: React.FC<TypistLoopProps> = (
